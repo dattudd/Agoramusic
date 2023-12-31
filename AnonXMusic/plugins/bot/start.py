@@ -7,7 +7,7 @@ from youtubesearchpython.__future__ import VideosSearch
 
 import config
 from config import BANNED_USERS
-from config.config import _boot_
+from config import _boot_
 from strings import get_command, get_string
 from AnonX import Telegram, YouTube, app
 from AnonX.misc import SUDOERS
