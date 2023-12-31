@@ -31,7 +31,7 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(text=_["channel"], url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text=_["Source code"], url=f"https://t.me/myra_updates),
+            InlineKeyboardButton(text=_["S_B_7"],url=config.UPSTREAM_REPO),
         ],
     ]
     return buttons
