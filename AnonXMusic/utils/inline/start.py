@@ -1,62 +1,50 @@
-from typing import Union
-
-from pyrogram.types import InlineKeyboardButton
-
-import config
-from AnonX import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
-    buttons = [
+def stats_buttons(_, status):
+    not_sudo = [
+        InlineKeyboardButton(
+            text=_["SA_B_1"],
+            callback_data="TopOverall",
+        )
+    ]
+    sudo = [
+        InlineKeyboardButton(
+            text=_["SA_B_2"],
+            callback_data="bot_stats_sudo",
+        ),
+        InlineKeyboardButton(
+            text=_["SA_B_3"],
+            callback_data="TopOverall",
+        ),
+    ]
+    upl = InlineKeyboardMarkup(
         [
-            InlineKeyboardButton(
-                text="🌷𝐀ԃ𝐃 𝐌ҽ 𝐓σ 𝐘συ𝐑 𝐆ɾσυ𝐏🌷",
-                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="𝐂σɱɱαɳԃ𝐒",
-                callback_data="settings_back_helper",
-            ),
-            InlineKeyboardButton(
-                text="𝐒ҽƚƚιɳɠ𝐒", callback_data="settings_helper"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="𝐅συɳԃҽ𝐑", user_id=OWNER),
-            InlineKeyboardButton(
-                text="𝐆ɾσυ𝐏", url=f"{config.SUPPORT_GROUP}"
-            ),
-        ],
-     ]
-    return buttons
+            sudo if status else not_sudo,
+            [
+                InlineKeyboardButton(
+                    text=_["CLOSE_BUTTON"],
+                    callback_data="close",
+                ),
+            ],
+        ]
+    )
+    return upl
 
 
-def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
-    buttons = [
+def back_stats_buttons(_):
+    upl = InlineKeyboardMarkup(
         [
-            InlineKeyboardButton(
-                text="🌷𝐀ԃ𝐃 𝐌ҽ 𝐓σ 𝐘συ𝐑 𝐆ɾσυ𝐏🌷",
-                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="𝐂σɱɱαɳԃ𝐒", callback_data="settings_back_helper"
-            ),
-        ],
-        [
-            InlineKeyboardButton(text="ᴍᴀɪɴᴛᴀɪɴᴇʀ", user_id=OWNER),
-            InlineKeyboardButton(
-                text="𝐆ɾσυ𝐏", url=f"{config.SUPPORT_GROUP}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                    text="🌹 𝑀𝑦𝑟𝑎 network 🌹", url="https://t.me/myra_updates"
-                )
-        ],
-     ]
-    return buttons
+            [
+                InlineKeyboardButton(
+                    text=_["BACK_BUTTON"],
+                    callback_data="stats_back",
+                ),
+                InlineKeyboardButton(
+                    text=_["CLOSE_BUTTON"],
+                    callback_data="close",
+                ),
+            ],
+        ]
+    )
+    return upl
