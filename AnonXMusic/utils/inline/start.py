@@ -24,14 +24,14 @@ def private_panel(_):
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper")],
+        [InlineKeyboardButton(text=_["💖𝐇ҽʅ𝐏💖"], callback_data="settings_back_helper")],
         [
             InlineKeyboardButton(text=_[❤️𝐎ɯɳҽ𝐑❤️], user_id=config.OWNER_ID),
-            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text=_["💘𝐆ɾσυ𝐏💘"], url=config.SUPPORT_CHAT),
         ],
         [
-            InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text=_["S_B_7"], url=config.UPSTREAM_REPO),
+            InlineKeyboardButton(text=_["channel"], url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text=_["Source code"], url=f"https://t.me/myra_updates),
         ],
     ]
     return buttons
