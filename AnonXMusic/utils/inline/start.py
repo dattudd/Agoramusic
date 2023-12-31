@@ -20,14 +20,14 @@ def private_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["🌹𝐀ԃ𝐃 𝐌ҽ 𝐌σ𝐈 𝐋ꪮꪜ𝐄🌹"],
+                text=_["𝐀ԃ𝐃 𝐌ҽ 𝐌σ𝐈 𝐋ꪮꪜ𝐄"],
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text=_["💖𝐇ҽʅ𝐏💖"], callback_data="settings_back_helper")],
+        [InlineKeyboardButton(text=_["𝐇ҽʅ𝐏"], callback_data="settings_back_helper")],
         [
-            InlineKeyboardButton(text=_[❤️𝐎ɯɳҽ𝐑❤️], user_id=config.OWNER_ID),
-            InlineKeyboardButton(text=_["💘𝐆ɾσυ𝐏💘"], url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text=_[𝐎ɯɳҽ𝐑], user_id=config.OWNER_ID),
+            InlineKeyboardButton(text=_["𝐆ɾσυ𝐏"], url=config.SUPPORT_CHAT),
         ],
         [
             InlineKeyboardButton(text=_["channel"], url=config.SUPPORT_CHANNEL),
