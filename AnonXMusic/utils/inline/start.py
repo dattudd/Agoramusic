@@ -1,37 +1,60 @@
-from pyrogram.types import InlineKeyboardButton
+from typing import Union
+
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 import config
-from AnonXMusic import app
 
 
-def start_panel(_):
+def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["𝐀dd me baby,"], url=f"https://t.me/{app.username}?startgroup=true"
-            ),
-            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
+                text="🌹𝐀ԃ𝐃 𝐌ҽ 𝐌σ𝐈 𝐋ꪮꪜ𝐄🌹",
+                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            )
         ],
-    ]
+        [
+            InlineKeyboardButton(
+                text="❤️𝐎ɯɳҽ𝐑❤️",
+                url=f"https://t.me/itsz_shivam",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="💖𝐇ҽʅ𝐏💖",
+                callback_data="settings_back_helper",
+            ),
+            InlineKeyboardButton(
+                text="🌸𝐒ҽƚƚιɳɠ𝐒🌸", callback_data="settings_helper"
+            ),
+        ],
+     ]
     return buttons
 
 
-def private_panel(_):
+def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["𝐀ԃ𝐃 𝐌ҽ 𝐌σ𝐈 𝐋ꪮꪜ𝐄"],
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="•🌷𝐀ԃ𝐃 𝐌ҽ 𝐓σ 𝐘συ𝐑 𝐆ɾσυ𝐏🌷•",
+                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text=_["𝐇ҽʅ𝐏"], callback_data="settings_back_helper")],
         [
-            InlineKeyboardButton(text=_[𝐎ɯɳҽ𝐑], user_id=config.OWNER_ID),
-            InlineKeyboardButton(text=_["𝐆ɾσυ𝐏"], url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(
+                text="🍒𝐂σɱɱαɳԃ𝐒🍒", callback_data="settings_back_helper"
+            ),
+            InlineKeyboardButton(
+                text="🥀𝐅συɳԃҽ𝐑🥀", user_id=OWNER
+            )
         ],
         [
-            InlineKeyboardButton(text=_["channel"], url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text=_["S_B_7"],url=config.UPSTREAM_REPO),
+            InlineKeyboardButton(
+                text="💘𝐆ɾσυ𝐏💘", url=config.SUPPORT_GROUP
+            ),
+            InlineKeyboardButton(
+                text="💞𝐔ρ∂αтє𝐒💞", url=f"https://t.me/myra_updates"
+            )
         ],
-    ]
+     ]
     return buttons
